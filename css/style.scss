@@ -106,16 +106,10 @@ textarea {
 .navigation {
     list-style-type: none;
     list-style: none;
-    // position: absolute;
-    // right: 3em;
     li {
         transition: all 0.4s;
         padding: 0 20px;
         font-size: 0.7em;
-        // &:hover{
-        //     background-color: rgba(59, 52, 51, 0.27);
-        //     border-radius: 5px;
-        // }
         a {
             color: white;
             &:hover{
@@ -126,12 +120,10 @@ textarea {
     }
     &#navtop {
         @extend .navigation;
-        //position: fixed; //lo pone fijo en la pantalla
         top: 1em; // lo separa 3 unidades del techo de la página
         right: 2em; // lo separa 3 unidades de la derecha de la pantalla
         font-size: 2em;
         li {
-            // padding: 0 10px;
             &:hover{
                 background-color: rgba(240, 22, 0, 0.2);
                 border-radius: 5px;
@@ -143,26 +135,9 @@ textarea {
         ul{
             padding-right: 3em;
         }
-        // font-size: 1.5em;
     }
 }
 
-// #navtop {
-//     @extend .navigation;
-//     //position: fixed; //lo pone fijo en la pantalla
-//     top: 1em; // lo separa 3 unidades del techo de la página
-//     right: 2em; // lo separa 3 unidades de la derecha de la pantalla
-//     font-size: 2em;
-//     li {
-//         padding: 0 10px;
-//         &:hover{
-//             background-color: rgba(240, 22, 0, 0.2);
-//             border-radius: 5px;
-//         }
-//     }
-// }
-
-////////////////////////////// base
 .video-container {
   position: absolute;
   top: 0;
@@ -192,7 +167,6 @@ textarea {
 .row {
     margin: 0; //sobreescribe una clase de flexboxgrid que ponía unos pequeños márgenes a los lados y que hacía que apareciera un scroll horizontal
     z-index: 1;
-    // position: relative;
     color: white;
     text-shadow: 0px 0px 48px silver;
     h1 {
