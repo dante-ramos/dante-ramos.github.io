@@ -1,0 +1,89 @@
+!!!html5
+/doctype de html5
+%html{class:"full-height"}
+    %head
+        %meta{charset:"utf-8"}
+        %title La mejor comida del mundo | Mi restaurante
+        %meta{name:"description", content:"La mejor comida del mundo"}
+        /para responsive design
+        %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+        / para tener una lista de funcionalidades que funcionan en el navegador
+        %script{src:"js/vendor/modernizr-3.5.0.min.js"}
+        / para que se evite lo que el navegador disponga, normaliza el contenido
+        %link{rel:"stylesheet", href:"css/normalize.css"}
+        / bootstrap
+        %link{rel:"stylesheet", href:"css/bootstrap.css"}
+        %script{src:"js/vendor/jquery-3.2.1.min.js"}
+        %script{src:"js/bootstrap.js"}
+        / flexbox para centrar verticalmente contenido
+        /%link{rel:"stylesheet", href:"https://cdn.jsdelivr.net/npm/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"}
+        %link{rel:"stylesheet", href:"css/flexboxgrid.min.css"}
+        / fuentes google
+        %link{href:"https://fonts.googleapis.com/css?family=Lobster", rel:"stylesheet"}
+        / mi hoja de estilos con Boilerplate de github
+        %link{rel:"stylesheet", href:"css/style.css"}
+
+        -# ------------------------------ archivos base
+        -# %link{rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"}
+        -# %link{rel:"stylesheet", href:"css/normalize.css"}
+        -# %link{href:"https://fonts.googleapis.com/css?family=Lobster", rel:"stylesheet"}
+        -# %link{href:'https://fonts.googleapis.com/css?family=Dancing+Script', rel:'stylesheet', type:'text/css'}
+        -# %link{href:"https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css", rel:"stylesheet"}
+        -# %link{rel:"stylesheet", href:"css/style.css"}
+        -# %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+    %body.absolute.full-width
+        -# {class:"full-heigh"}
+        / Si se tiene un navegador viejo
+        / = es para agregar html al haml
+        ="<!--[if lte IE 9]>"
+        %p{class:"browserupgrade"}
+            Estás usando un navegador
+            %strong desactualizado.
+            Por favor
+            %a{href:"https://browsehappy.com/"}
+                actualízalo
+            para tener una mejor experiencia
+        ="<![endif]-->"
+
+        .video-container.absolute.full-width
+            / poster es para que se muestre una imagen hasta que se cargue el video
+            %video{autoplay:true, loop:true, class:"fillWidth", poster:"videos/bbq.jpg"}
+                %source{src:"videos/bbq.mp4"}
+                %source{src:"videos/bbq.webm"}
+        / row es clase de flexboxgrid
+        / full-heigh es una clase mía que apligo a row, html y body
+        / middle-xs de flexboxgrid para centrar verticalmente
+        / center-xs de flexboxgrid para centrar horizaontalmente
+        .row.full-height.middle-xs.center-xs.relative.ontop.top.full-width
+            // col-xs-12 clase de flexboxgrid para que el elemento ocupe las 12 columnas de flexbox
+            // padding 0 porque automáticamente pone unos paddings que son algo molestos
+            -menu = ['Inicio', 'Menú', 'Galería', 'Contacto', 'Cómo llegar']
+            %nav.navigation#navtop.fixed
+                %ul.list-inline
+                    -menu.each do |item|
+                        %li
+                            %a= item
+            .col-xs-12{style:"padding:0;"}
+                .box
+                    %img{src:"imgs/logo.png", height:"20%"}
+                    -# %img{src:"imgs/logo.png", height:"20%"}
+                    %h1 Restaurante Vostro
+                    %p.glyphicon.glyphicon-time#isopen Abierto ahora
+            #barra-inferior.center-xs.absolute
+                .row.middle-xs.center-xs
+                    .col-xs-7.col-sm-6
+                        Atención cálida y comida preparada por artesanos.
+                    .col-xs.hidden#stickynav
+                        -# .box
+                        %nav.navigation#navsticky
+                            -menu = ['Inicio', 'Menú', 'Galería', 'Contacto', 'Cómo llegar']
+                            %ul.list-inline
+                                -menu.each do |item|
+                                    %li
+                                        %a= item
+        .full-height.relative
+        .full-height.relative
+        // si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga:
+        //%script
+        //    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>")
+        %script{src:'dist/script.js'}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- doctype de html5 -->
+<html class="full-height">
+  <head>
+    <meta charset="utf-8">
+    <title>La mejor comida del mundo | Mi restaurante</title>
+    <meta content="La mejor comida del mundo" name="description">
+    <!-- para responsive design -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- para tener una lista de funcionalidades que funcionan en el navegador -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- para que se evite lo que el navegador disponga, normaliza el contenido -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- flexbox para centrar verticalmente contenido -->
+    <!-- %link{rel:"stylesheet", href:"https://cdn.jsdelivr.net/npm/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"} -->
+    <link href="css/flexboxgrid.min.css" rel="stylesheet">
+    <!-- fuentes google -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <!-- mi hoja de estilos con Boilerplate de github -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="absolute full-width">
+    <!-- Si se tiene un navegador viejo -->
+    <!-- = es para agregar html al haml -->
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">
+      Estás usando un navegador
+      <strong>desactualizado.</strong>
+      Por favor
+      <a href="https://browsehappy.com/">
+        actualízalo
+      </a>
+      para tener una mejor experiencia
+    </p>
+    <![endif]-->
+    <div class="video-container absolute full-width">
+      <!-- poster es para que se muestre una imagen hasta que se cargue el video -->
+      <video autoplay class="fillWidth" loop poster="videos/bbq.jpg">
+        <source src="videos/bbq.mp4">
+        <source src="videos/bbq.webm">
+      </video>
+    </div>
+    <!-- row es clase de flexboxgrid -->
+    <!-- full-heigh es una clase mía que apligo a row, html y body -->
+    <!-- middle-xs de flexboxgrid para centrar verticalmente -->
+    <!-- center-xs de flexboxgrid para centrar horizaontalmente -->
+    <div class="row full-height middle-xs center-xs relative ontop top full-width">
+      <!-- / col-xs-12 clase de flexboxgrid para que el elemento ocupe las 12 columnas de flexbox -->
+      <!-- / padding 0 porque automáticamente pone unos paddings que son algo molestos -->
+      <nav class="navigation fixed" id="navtop">
+        <ul class="list-inline">
+          <li>
+            <a>Inicio</a>
+          </li>
+          <li>
+            <a>Menú</a>
+          </li>
+          <li>
+            <a>Galería</a>
+          </li>
+          <li>
+            <a>Contacto</a>
+          </li>
+          <li>
+            <a>Cómo llegar</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="col-xs-12" style="padding:0;">
+        <div class="box">
+          <img height="20%" src="imgs/logo.png">
+          <h1>Restaurante Vostro</h1>
+          <p class="glyphicon glyphicon-time" id="isopen">Abierto ahora</p>
+        </div>
+      </div>
+      <div class="center-xs absolute" id="barra-inferior">
+        <div class="row middle-xs center-xs">
+          <div class="col-xs-7 col-sm-6">
+            Atención cálida y comida preparada por artesanos.
+          </div>
+          <div class="col-xs hidden" id="stickynav">
+            <nav class="navigation" id="navsticky">
+              <ul class="list-inline">
+                <li>
+                  <a>Inicio</a>
+                </li>
+                <li>
+                  <a>Menú</a>
+                </li>
+                <li>
+                  <a>Galería</a>
+                </li>
+                <li>
+                  <a>Contacto</a>
+                </li>
+                <li>
+                  <a>Cómo llegar</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="full-height relative"></div>
+    <div class="full-height relative"></div>
+    <!-- / si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga: -->
+    <!-- /%script -->
+    <!-- /    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>") -->
+    <script src="dist/script.js"></script>
+  </body>
+</html>
