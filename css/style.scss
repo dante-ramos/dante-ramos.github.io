@@ -123,6 +123,7 @@ textarea {
         top: 1em; // lo separa 3 unidades del techo de la página
         right: 2em; // lo separa 3 unidades de la derecha de la pantalla
         font-size: 2em;
+        z-index: 1000;
         li {
             &:hover{
                 background-color: rgba(240, 22, 0, 0.2);
@@ -206,9 +207,36 @@ textarea {
     }
 }
 
-
-
-
+.food {
+    margin: 0;
+    padding: 0;
+    height: 300px;
+    background-size:cover;
+    overflow:hidden; //todo lo que salga del espacio de cada foto, no se ve
+    padding: 0;
+    &:hover{
+        .black-screen{
+            top: 0;
+        }
+    }
+    .black-screen {
+        top: -100%; //para el efecto de la animación, los subimos 100%
+        position:relative; // para que el black-screen esté sobre la imagen y se le pueda poner los 100% de height y width
+        background-color: rgba(0,0,0,0.7);
+        height: 100%;
+        width: 100%;
+        transition: 0.5s;
+    }
+}
+#menu-title {
+    z-index: 100;
+    background-color: white;
+    color: black;
+    // font-size: 6em;
+    width: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 4em);
+}
 
 /* ==========================================================================
    Helper classes
@@ -253,6 +281,15 @@ textarea {
 .ontop {
     z-index: 100;
 }
+
+/* Otros estilos en helpers */
+.text-center {
+    text-align: center;
+}
+.dancing-script {
+    font-family: "Dancing Script";
+}
+
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility

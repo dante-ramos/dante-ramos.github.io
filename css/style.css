@@ -99,7 +99,8 @@ textarea {
   #navtop.navigation {
     top: 1em;
     right: 2em;
-    font-size: 2em; }
+    font-size: 2em;
+    z-index: 1000; }
     #navtop.navigation li:hover {
       background-color: rgba(240, 22, 0, 0.2);
       border-radius: 5px; }
@@ -163,6 +164,33 @@ textarea {
   #barra-inferior.absolute {
     bottom: 0; }
 
+.food {
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  background-size: cover;
+  overflow: hidden;
+  padding: 0; }
+  .food:hover .black-screen {
+    top: 0; }
+  .food .black-screen {
+    top: -100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+
+#menu-title {
+  z-index: 100;
+  background-color: white;
+  color: black;
+  width: 200px;
+  left: calc(50% - 100px);
+  top: calc(50% - 4em); }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -198,6 +226,13 @@ textarea {
 
 .ontop {
   z-index: 100; }
+
+/* Otros estilos en helpers */
+.text-center {
+  text-align: center; }
+
+.dancing-script {
+  font-family: "Dancing Script"; }
 
 /*
  * Hide only visually, but have it available for screen readers:
