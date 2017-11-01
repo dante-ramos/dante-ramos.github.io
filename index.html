@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- doctype de html5 -->
+<!-- /arreglo para slider -->
 <html class="full-height">
   <head>
     <meta charset="utf-8">
@@ -44,10 +45,10 @@
         <source src="videos/bbq.webm">
       </video>
     </div>
-    <!-- row es clase de flexboxgrid -->
-    <!-- full-heigh es una clase mía que apligo a row, html y body -->
-    <!-- middle-xs de flexboxgrid para centrar verticalmente -->
-    <!-- center-xs de flexboxgrid para centrar horizaontalmente -->
+    <!-- / row es clase de flexboxgrid -->
+    <!-- / full-heigh es una clase mía que apligo a row, html y body -->
+    <!-- / middle-xs de flexboxgrid para centrar verticalmente -->
+    <!-- / center-xs de flexboxgrid para centrar horizaontalmente -->
     <div class="row full-height middle-xs center-xs relative ontop top full-width" id="home">
       <!-- / col-xs-12 clase de flexboxgrid para que el elemento ocupe las 12 columnas de flexbox -->
       <!-- / padding 0 porque automáticamente pone unos paddings que son algo molestos -->
@@ -225,6 +226,18 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="full-width" id="galeria">
+      <!-- /inner es necesario para que se manejable el movimiento del scroll -->
+      <!-- /#galería tiene el full-width, pero si tuviera el overflow hidden y el nowrap del white-space no cargaría las imágenes -->
+      <div class="inner">
+        <div class="image" style="background-image:url(imgs/comida/club-sandwich.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/comida/hamburger.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/comida/panini.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/comida/hot-cakes.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/comida/papas.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/comida/combo.jpg)"></div>
       </div>
     </div>
     <!-- / si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga: -->

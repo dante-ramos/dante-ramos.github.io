@@ -1,5 +1,9 @@
 !!!html5
 /doctype de html5
+//arreglo para slider
+-fotosslider = ["imgs/comida/club-sandwich.jpg","imgs/comida/hamburger.jpg",
+    "imgs/comida/panini.jpg", "imgs/comida/hot-cakes.jpg","imgs/comida/papas.jpg",
+    "imgs/comida/combo.jpg"]
 %html{class:"full-height"}
     %head
         %meta{charset:"utf-8"}
@@ -41,10 +45,10 @@
             %video{autoplay:true, loop:true, class:"fillWidth", poster:"videos/bbq.jpg"}
                 %source{src:"videos/bbq.mp4"}
                 %source{src:"videos/bbq.webm"}
-        / row es clase de flexboxgrid
-        / full-heigh es una clase mía que apligo a row, html y body
-        / middle-xs de flexboxgrid para centrar verticalmente
-        / center-xs de flexboxgrid para centrar horizaontalmente
+        // row es clase de flexboxgrid
+        // full-heigh es una clase mía que apligo a row, html y body
+        // middle-xs de flexboxgrid para centrar verticalmente
+        // center-xs de flexboxgrid para centrar horizaontalmente
         .row.full-height.middle-xs.center-xs.relative.ontop.top.full-width#home
             // col-xs-12 clase de flexboxgrid para que el elemento ocupe las 12 columnas de flexbox
             // padding 0 porque automáticamente pone unos paddings que son algo molestos
@@ -94,6 +98,14 @@
                                         =elemento[:name]
                                     %p{style:"margin: 0; font-size: 1.5em;"}
                                         ="$"+elemento[:price]
+        .full-width#galeria
+            //inner es necesario para que se manejable el movimiento del scroll
+            //#galería tiene el full-width, pero si tuviera el overflow hidden y el nowrap del white-space no cargaría las imágenes
+            .inner
+                -fotosslider.each do |image|
+                    .image{style:"background-image:url(#{image})"}
+
+
         // si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga:
         //%script
         //    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>")

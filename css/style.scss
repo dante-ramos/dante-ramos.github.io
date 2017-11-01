@@ -232,10 +232,29 @@ textarea {
     z-index: 100;
     background-color: white;
     color: black;
-    // font-size: 6em;
     width: 200px;
     left: calc(50% - 100px);
     top: calc(50% - 4em);
+}
+
+#galeria {
+    overflow-x: hidden;
+    white-space: nowrap;
+    .inner {
+        left: 0;
+        transition: left 1.5s;
+        position: relative;
+    }
+    .image { //clase para los elementos del slider
+        display: inline-block;
+        height: 100vh;
+        width: 100vw;
+        margin-right: -4px;
+        margin-bottom: -4px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 
 /* ==========================================================================

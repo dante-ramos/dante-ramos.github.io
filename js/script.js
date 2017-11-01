@@ -1,11 +1,6 @@
 ;(function(){
     var sticky = false // para saber cuando el menú superior ya no esté visible
     $(window).scroll(function(){
-        console.log($(window).height())
-        console.log($(window).scrollTop())
-        console.log($("#barra-inferior").height())
-        console.log($("#navtop").height())
-        console.log(IsInBottom())
         if (IsInBottom() && !sticky) {
             sticky = true
             hidetopnav()
@@ -38,4 +33,16 @@
             $('#stickynav').addClass('hidden')
         }
     })
+
+    //método para el slider
+    var currentpic = 1;
+    setInterval(function(){
+        $("#galeria .inner").css({ // se debe tener un div intermedio que cargue las imágenes, #galería tiene un overflow hidden y no cargaría todo el contenido, pero el div interno sí lo carga y ese es el que se va moviend
+            left: "-"+currentpic*100+"vw"
+        });
+        currentpic++;
+        if (currentpic == $('.inner > .image').length) {
+            currentpic = 0;
+        }
+    },5000) //cada 1000 milisegundos
 })()
