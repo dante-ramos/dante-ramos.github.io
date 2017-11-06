@@ -45,4 +45,27 @@
             currentpic = 0;
         }
     },5000) //cada 1000 milisegundos
+
+    $("#contact-form").on("submit", function(ev){
+        ev.preventDefault() // evita que el formulario se envíe por default como está especificado y que se haga ésto
+
+        var form = {} // es el objeto que se enviará a fromspree
+        $.each($(this).serializeArray(), function (i, field) { // recorre los elementos del formulario y los agrega al objeto
+            form[field.name] = field.value || "";
+        });
+        console.log(form)
+
+        $.ajax({ // de formspree
+            url: $(this).attr("action"),
+            method: "POST",
+            data: form,
+            dataType: "json"
+        });
+
+        return false // necesario junto con el preventDefault para que se envíe el formulario por default
+    })
+
+    function sendForm($form){
+
+    }
 })()

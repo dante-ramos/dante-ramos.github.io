@@ -240,9 +240,74 @@
         <div class="image" style="background-image:url(imgs/comida/combo.jpg)"></div>
       </div>
     </div>
+    <!-- /el container con height 0, permite que el siguiente elemento sea contínuo, y el hijo de -->
+    <!-- / container se pueda traslapar con lo superior o inferior -->
+    <div class="container" style="height:0;">
+      <div id="card">
+        <h3>
+          <span class="dancing-script strong medium">En Restaurante Vostro,</span>
+          <br>
+          cocinar no es una profesión,
+          <br>
+          ni es cuestión de técnica,
+          <br>
+          <span class="dancing-script strong medium">es un Arte.</span>
+        </h3>
+        <p>
+          Ubicados en la ciudad de Tlaltenango de Sánchez Román, estado de Zacatecas, y con el respaldo de más de 15 años de excelencia en calidad gastronómica y servicio, ofrecemos a nuestros comensales la experiencia gourmet en un amplio menú con carnes finas, productos del mar frescos, antojitos mexicanos y platillos internacionales preparados por personal altamente calificado, utilizando técnicas modernas y materia prima de alta calidad. venga y disfrute de un ambiente familiar y deguste nuestras especialidades en platos fuertes, ensaladas, pizzas a la leña, coctelería y postres.
+        </p>
+      </div>
+    </div>
+    <div class="full-height" id="contact">
+      <div class="row full-height middle-xs">
+        <div class="col-xs-12">
+          <div class="box">
+            <form action="https://formspree.io/dante.ro86@gmail.com" id="contact-form" method="POST">
+              <div class="row center-xs">
+                <!-- / para navegar por los campos, se muestran 3 puntos, uno por campo -->
+                <div class="col-xs-2 col-md-1">
+                  <div class="box" style="float: right;">
+                    <!-- /ciclo for de 3 -->
+                    <!-- /path-step es la clase de las bolitas para navegar entre el formulario -->
+                    <div class="path-step active"></div>
+                    <!-- /path-step es la clase de las bolitas para navegar entre el formulario -->
+                    <div class="path-step"></div>
+                    <!-- /path-step es la clase de las bolitas para navegar entre el formulario -->
+                    <div class="path-step"></div>
+                  </div>
+                </div>
+                <!-- /inputs del formulario -->
+                <div class="col-xs-4">
+                  <div class="box">
+                    <fieldset class="step active">
+                      <input class="input" name="email" placeholder="Escriba su correo electrónico" required type="email">
+                    </fieldset>
+                    <fieldset class="step">
+                      <input class="input" name="nombre" placeholder="Escriba su nombre" required type="text">
+                    </fieldset>
+                    <fieldset class="step">
+                      <textarea class="input" name="body" placeholder="Escriba aquí sus comentarios." required></textarea>
+                    </fieldset>
+                    <!-- / el input hidden _subject es para formspree, le pone el value como subject del correo que se enviará -->
+                    <div>
+                      <input name="_subject" type="hidden" value="!!Formspree: Nuevo mensaje desde una de tus páginas.">
+                      <input type="Submit" value="Enviar mensaje">
+                      <p class="error">
+                        <em>Verifique la información, el campo es requerido y debe ser correcto!!</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- / si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga: -->
     <!-- /%script -->
     <!-- /    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>") -->
+    <script src="dist/contact-steps.js"></script>
     <script src="dist/script.js"></script>
   </body>
 </html>

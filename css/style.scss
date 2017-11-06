@@ -250,13 +250,87 @@ textarea {
         height: 100vh;
         width: 100vw;
         margin-right: -4px;
-        margin-bottom: -4px;
+        margin-bottom: -5px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
 }
 
+#card {
+    color: white;
+    background-color: rgb(55, 59, 56);
+    text-align: center;
+    font-size: 1.1em;
+    padding: 1.5em 0;
+    box-shadow: 0 0 15px black;
+    position: relative;
+    bottom: 200px;
+    z-index: 10;
+    span {
+        font-size: 1.5em;
+    }
+}
+
+#contact {
+    background-color: black;
+    position: relative;
+    padding-top: 20vh;
+}
+input, textarea {
+    // padding: 2em;
+    font-size: 2em;
+    border: none;
+    color: #ddd;
+    outline: none;
+    border-bottom: solid 1px #ddd;
+    background-color: transparent;
+    width: 100%;
+}
+
+input:-webkit-autofill { // modifica el estilo que pone el autocomplete de google chorome
+    -webkit-text-fill-color: #ddd !important;
+    -webkit-box-shadow: 0 0 0 30px black inset;
+}
+
+#contact-form {
+    .step {
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        transition: all 0.8s;
+        &.active {
+            max-height: 150px;
+            // height: 100%
+        }
+    }
+    .error{
+        visibility: hidden;
+        color: red;
+        &.show {
+            visibility: visible;
+            z-index: 100;
+        }
+    }
+}
+
+.path-step {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: rgb(105, 101, 99);
+    margin-top: 1em;
+    cursor: pointer;
+    opacity: 0.5;
+    &:hover {
+        opacity: 0.7;
+        box-shadow: 0 0 5px white;
+    }
+    &.active {
+        opacity: 1;
+        box-shadow: 0 0 7px white;
+    }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

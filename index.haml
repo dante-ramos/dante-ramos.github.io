@@ -104,9 +104,53 @@
             .inner
                 -fotosslider.each do |image|
                     .image{style:"background-image:url(#{image})"}
-
-
+        //el container con height 0, permite que el siguiente elemento sea contínuo, y el hijo de
+        // container se pueda traslapar con lo superior o inferior
+        .container{style:"height:0;"}
+            #card
+                %h3
+                    %span.dancing-script.strong.medium En Restaurante Vostro,
+                    %br
+                    cocinar no es una profesión,
+                    %br
+                    ni es cuestión de técnica,
+                    %br
+                    %span.dancing-script.strong.medium es un Arte.
+                %p
+                    Ubicados en la ciudad de Tlaltenango de Sánchez Román, estado de Zacatecas, y con el respaldo de más de 15 años de excelencia en calidad gastronómica y servicio, ofrecemos a nuestros comensales la experiencia gourmet en un amplio menú con carnes finas, productos del mar frescos, antojitos mexicanos y platillos internacionales preparados por personal altamente calificado, utilizando técnicas modernas y materia prima de alta calidad. venga y disfrute de un ambiente familiar y deguste nuestras especialidades en platos fuertes, ensaladas, pizzas a la leña, coctelería y postres.
+        #contact.full-height
+            .row.full-height.middle-xs
+                .col-xs-12
+                    .box
+                        %form{action:"https://formspree.io/dante.ro86@gmail.com", method:"POST", id:"contact-form"}
+                            .row.center-xs
+                                // para navegar por los campos, se muestran 3 puntos, uno por campo
+                                .col-xs-2.col-md-1
+                                    .box{style:"float: right;"}
+                                        //ciclo for de 3
+                                        -3.times do |i|
+                                            //path-step es la clase de las bolitas para navegar entre el formulario
+                                            -if i == 0
+                                                .path-step.active
+                                            -else
+                                                .path-step
+                                //inputs del formulario
+                                .col-xs-4
+                                    .box
+                                        %fieldset.step.active
+                                            %input{type:"email", class:"input", name:"email", placeholder:"Escriba su correo electrónico", required:true}
+                                        %fieldset.step
+                                            %input{type:"text", class:"input", name:"nombre", placeholder:"Escriba su nombre", required: true}
+                                        %fieldset.step
+                                            %textarea{name:"body", class:"input", placeholder:"Escriba aquí sus comentarios.", required:true}
+                                        // el input hidden _subject es para formspree, le pone el value como subject del correo que se enviará
+                                        %div
+                                            %input{type:"hidden", name:"_subject", value:"!!Formspree: Nuevo mensaje desde una de tus páginas."}
+                                            %input{type:"Submit", value:"Enviar mensaje"}
+                                            %p.error
+                                                %em Verifique la información, el campo es requerido y debe ser correcto!!
         // si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga:
         //%script
         //    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>")
+        %script{src:"dist/contact-steps.js"}
         %script{src:'dist/script.js'}
