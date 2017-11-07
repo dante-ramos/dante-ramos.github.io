@@ -301,7 +301,6 @@ input:-webkit-autofill { // modifica el estilo que pone el autocomplete de googl
         transition: all 0.8s;
         &.active {
             max-height: 150px;
-            // height: 100%
         }
     }
     .error{
@@ -381,6 +380,18 @@ input:-webkit-autofill { // modifica el estilo que pone el autocomplete de googl
 }
 .dancing-script {
     font-family: "Dancing Script";
+}
+
+.text-medium-size {
+    font-size: 1.5em;
+}
+
+.text-double-size {
+    font-size: 2em;
+}
+
+.text-triple-size {
+    font-size: 3em;
 }
 
 /*

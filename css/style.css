@@ -319,6 +319,15 @@ input:-webkit-autofill {
 .dancing-script {
   font-family: "Dancing Script"; }
 
+.text-medium-size {
+  font-size: 1.5em; }
+
+.text-double-size {
+  font-size: 2em; }
+
+.text-triple-size {
+  font-size: 3em; }
+
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility

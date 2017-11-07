@@ -261,6 +261,7 @@
     <div class="full-height" id="contact">
       <div class="row full-height middle-xs">
         <div class="col-xs-12">
+          <p class="text-center white text-medium-size" style="margin: 1.5em;">LLena los campos y presiona enter para enviar la información.</p>
           <div class="box">
             <form action="https://formspree.io/dante.ro86@gmail.com" id="contact-form" method="POST">
               <div class="row center-xs">
@@ -276,7 +277,7 @@
                     <div class="path-step"></div>
                   </div>
                 </div>
-                <!-- /inputs del formulario -->
+                <!-- /inputs del formulario, todos son requeridos -->
                 <div class="col-xs-4">
                   <div class="box">
                     <fieldset class="step active">
@@ -290,8 +291,6 @@
                     </fieldset>
                     <!-- / el input hidden _subject es para formspree, le pone el value como subject del correo que se enviará -->
                     <div>
-                      <input name="_subject" type="hidden" value="!!Formspree: Nuevo mensaje desde una de tus páginas.">
-                      <input type="Submit" value="Enviar mensaje">
                       <p class="error">
                         <em>Verifique la información, el campo es requerido y debe ser correcto!!</em>
                       </p>

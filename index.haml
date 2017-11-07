@@ -121,6 +121,7 @@
         #contact.full-height
             .row.full-height.middle-xs
                 .col-xs-12
+                    %p.text-center.white.text-medium-size{style:"margin: 1.5em;"} LLena los campos y presiona enter para enviar la información.
                     .box
                         %form{action:"https://formspree.io/dante.ro86@gmail.com", method:"POST", id:"contact-form"}
                             .row.center-xs
@@ -134,7 +135,7 @@
                                                 .path-step.active
                                             -else
                                                 .path-step
-                                //inputs del formulario
+                                //inputs del formulario, todos son requeridos
                                 .col-xs-4
                                     .box
                                         %fieldset.step.active
@@ -145,8 +146,8 @@
                                             %textarea{name:"body", class:"input", placeholder:"Escriba aquí sus comentarios.", required:true}
                                         // el input hidden _subject es para formspree, le pone el value como subject del correo que se enviará
                                         %div
-                                            %input{type:"hidden", name:"_subject", value:"!!Formspree: Nuevo mensaje desde una de tus páginas."}
-                                            %input{type:"Submit", value:"Enviar mensaje"}
+                                            -# %input{type:"hidden", name:"_subject", value:"!!Formspree: Nuevo mensaje desde una de tus páginas."}
+                                            -# %input{type:"Submit", value:"Enviar mensaje"}
                                             %p.error
                                                 %em Verifique la información, el campo es requerido y debe ser correcto!!
         // si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga:
