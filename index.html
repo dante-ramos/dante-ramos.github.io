@@ -24,7 +24,7 @@
     <!-- mi hoja de estilos con Boilerplate de github -->
     <link href="css/style.css" rel="stylesheet">
   </head>
-  <body class="absolute full-width">
+  <body class="full-width">
     <!-- Si se tiene un navegador viejo -->
     <!-- = es para agregar html al haml -->
     <!--[if lte IE 9]>
@@ -303,9 +303,15 @@
         </div>
       </div>
     </div>
+    <div id="localizacion">
+      <div id="mapa"></div>
+      <div class="text-center fondo-negro text-white" id="mensaje" style="padding: 1em;"></div>
+    </div>
     <!-- / si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga: -->
     <!-- /%script -->
     <!-- /    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>") -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLRYy6g1c7eK8MX3AUCsg3T9D1mkWSyXY&amp;libraries=geometry&amp;callback=initMap"></script>
+    <script src="dist/maps.js"></script>
     <script src="dist/contact-steps.js"></script>
     <script src="dist/script.js"></script>
   </body>

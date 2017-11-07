@@ -276,6 +276,15 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 7px white;
     box-shadow: 0 0 7px white; }
 
+#localizacion {
+  width: 75vw;
+  height: 75vh;
+  margin: 0 auto;
+  margin-top: -50px; }
+  #localizacion #mapa {
+    height: 100%;
+    width: 100%; }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -312,7 +321,13 @@ input:-webkit-autofill {
 .ontop {
   z-index: 100; }
 
+.fondo-negro {
+  background-color: black; }
+
 /* Otros estilos en helpers */
+.text-white {
+  color: white; }
+
 .text-center {
   text-align: center; }
 

@@ -26,7 +26,8 @@
         %link{href:'https://fonts.googleapis.com/css?family=Dancing+Script', rel:'stylesheet', type:'text/css'}
         / mi hoja de estilos con Boilerplate de github
         %link{rel:"stylesheet", href:"css/style.css"}
-    %body.absolute.full-width
+    %body.full-width
+        -# absolute en el body eliminado para pruebas
         -# {class:"full-heigh"}
         / Si se tiene un navegador viejo
         / = es para agregar html al haml
@@ -146,12 +147,16 @@
                                             %textarea{name:"body", class:"input", placeholder:"Escriba aquí sus comentarios.", required:true}
                                         // el input hidden _subject es para formspree, le pone el value como subject del correo que se enviará
                                         %div
-                                            -# %input{type:"hidden", name:"_subject", value:"!!Formspree: Nuevo mensaje desde una de tus páginas."}
-                                            -# %input{type:"Submit", value:"Enviar mensaje"}
                                             %p.error
                                                 %em Verifique la información, el campo es requerido y debe ser correcto!!
+        #localizacion
+            #mapa
+            #mensaje.text-center.fondo-negro.text-white{style:"padding: 1em;"}
+
         // si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga:
         //%script
         //    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>")
+        %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyDLRYy6g1c7eK8MX3AUCsg3T9D1mkWSyXY&libraries=geometry&callback=initMap", async:true, defer:true}
+        %script{src:"dist/maps.js"}
         %script{src:"dist/contact-steps.js"}
         %script{src:'dist/script.js'}
