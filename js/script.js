@@ -10,7 +10,7 @@
             unhidetopnav()
         }
 
-        //
+        //verifica que el fin de la primera parte haya llegado a la parte superior por scroll
         function IsInBottom(){
             const $description = $("#barra-inferior")
             const $descriptionheight = $description.height();
@@ -45,4 +45,32 @@
             currentpic = 0;
         }
     },5000) //cada 1000 milisegundos
+
+    // script copiado de internet improved smoth scrolling efect
+    $("a[href^='#']").click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var $target = $(this.hash)
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']')
+            if ($target.length) {
+                var targetOffset = $target.offset().top
+                $('html,body').animate({scrollTop: targetOffset}, 1000)
+                return false
+            }
+        }
+      });
+
+    //   $('nav a').on('click', function(event) {
+    //       $(this).parent().find('a').removeClass('active_underlined');
+    //       $(this).addClass('active_underlined');
+    //   });
+
+      $(window).on('scroll', function() {
+          $('.seccion').each(function() {
+                if($(window).scrollTop() >= $(this).offset().top - 140) { // 140 para que termine un poco antes de que desaparezca de la pantalla
+                    var id = $(this).attr('id');
+                    $('#navsticky a.activo').removeClass('activo');
+                    $('a[href="#'+ id +'"]').addClass('activo');
+                }
+          });
+      });
 })()

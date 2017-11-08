@@ -45,29 +45,30 @@
         <source src="videos/bbq.webm">
       </video>
     </div>
+    <!-- / la clase  seccion se agrega para activar el rastreo del scroll y aplicar estilos a la navegación mientras se da scroll a la página -->
     <!-- / row es clase de flexboxgrid -->
     <!-- / full-heigh es una clase mía que apligo a row, html y body -->
     <!-- / middle-xs de flexboxgrid para centrar verticalmente -->
     <!-- / center-xs de flexboxgrid para centrar horizaontalmente -->
-    <div class="row full-height middle-xs center-xs relative ontop top full-width" id="home">
+    <div class="seccion row full-height middle-xs center-xs relative ontop top full-width" id="home">
       <!-- / col-xs-12 clase de flexboxgrid para que el elemento ocupe las 12 columnas de flexbox -->
       <!-- / padding 0 porque automáticamente pone unos paddings que son algo molestos -->
       <nav class="navigation fixed" id="navtop">
         <ul class="list-inline">
           <li>
-            <a>Inicio</a>
+            <a href="#home">Inicio</a>
           </li>
           <li>
-            <a>Menú</a>
+            <a href="#menu">Menú</a>
           </li>
           <li>
-            <a>Galería</a>
+            <a href="#galeria">Galería</a>
           </li>
           <li>
-            <a>Contacto</a>
+            <a href="#contact">Contacto</a>
           </li>
           <li>
-            <a>Cómo llegar</a>
+            <a href="#localizacion">Cómo llegar</a>
           </li>
         </ul>
       </nav>
@@ -87,19 +88,19 @@
             <nav class="navigation" id="navsticky">
               <ul class="list-inline">
                 <li>
-                  <a>Inicio</a>
+                  <a href="#home">Inicio</a>
                 </li>
                 <li>
-                  <a>Menú</a>
+                  <a href="#menu">Menú</a>
                 </li>
                 <li>
-                  <a>Galería</a>
+                  <a href="#galeria">Galería</a>
                 </li>
                 <li>
-                  <a>Contacto</a>
+                  <a href="#contact">Contacto</a>
                 </li>
                 <li>
-                  <a>Cómo llegar</a>
+                  <a href="#localizacion">Cómo llegar</a>
                 </li>
               </ul>
             </nav>
@@ -107,7 +108,7 @@
         </div>
       </div>
     </div>
-    <div class="text-center relative" id="menu">
+    <div class="seccion text-center relative" id="menu">
       <div class="absolute" id="menu-title" style="z-index: 10; margin:0; padding:0;">
         <h3 class="dancing-script" style="font-size: 4em;">
           Menú
@@ -228,7 +229,7 @@
         </div>
       </div>
     </div>
-    <div class="full-width" id="galeria">
+    <div class="seccion full-width" id="galeria">
       <!-- /inner es necesario para que se manejable el movimiento del scroll -->
       <!-- /#galería tiene el full-width, pero si tuviera el overflow hidden y el nowrap del white-space no cargaría las imágenes -->
       <div class="inner">
@@ -258,7 +259,7 @@
         </p>
       </div>
     </div>
-    <div class="full-height" id="contact">
+    <div class="seccion full-height" id="contact">
       <div class="row full-height middle-xs">
         <div class="col-xs-12">
           <p class="text-center white text-medium-size" style="margin: 1.5em;">LLena los campos y presiona enter para enviar la información.</p>
@@ -303,7 +304,7 @@
         </div>
       </div>
     </div>
-    <div id="localizacion">
+    <div class="seccion" id="localizacion">
       <div id="mapa"></div>
       <div class="text-center fondo-negro text-white" id="mensaje" style="padding: 1em;"></div>
     </div>

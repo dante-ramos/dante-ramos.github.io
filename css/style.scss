@@ -116,6 +116,9 @@ textarea {
                 text-decoration: none;
                 cursor: pointer;
             }
+            &:focus{
+                text-decoration: none;
+            }
         }
     }
     &#navtop {
@@ -125,9 +128,14 @@ textarea {
         font-size: 2em;
         z-index: 1000;
         li {
+            transition: all 0.5s;
             &:hover{
                 background-color: rgba(240, 22, 0, 0.2);
                 border-radius: 5px;
+            }
+            &:first-child{
+                background-color: rgba(240, 22, 0, 0.4);
+                border-radius: 7px;
             }
         }
     }
@@ -135,6 +143,15 @@ textarea {
         text-align: right;
         ul{
             padding-right: 3em;
+            a.activo {
+                border-bottom: solid 2px rgba(255,255,255, 0.7);
+            }
+            li:hover {
+                text-shadow: 0 0 2px white;
+                a {
+                    border: 0;
+                }
+            }
         }
     }
 }
@@ -520,8 +537,9 @@ input:-webkit-autofill { // modifica el estilo que pone el autocomplete de googl
     }
 
     a,
-    a:visited {
-        text-decoration: underline;
+    a:visited,
+    a:focus {
+        text-decoration-line: none;
     }
 
     a[href]:after {

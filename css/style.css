@@ -96,18 +96,33 @@ textarea {
       .navigation li a:hover, .navigation#navtop li a:hover {
         text-decoration: none;
         cursor: pointer; }
+      .navigation li a:focus, .navigation#navtop li a:focus {
+        text-decoration: none; }
   #navtop.navigation {
     top: 1em;
     right: 2em;
     font-size: 2em;
     z-index: 1000; }
-    #navtop.navigation li:hover {
-      background-color: rgba(240, 22, 0, 0.2);
-      border-radius: 5px; }
+    #navtop.navigation li {
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
+      #navtop.navigation li:hover {
+        background-color: rgba(240, 22, 0, 0.2);
+        border-radius: 5px; }
+      #navtop.navigation li:first-child {
+        background-color: rgba(240, 22, 0, 0.4);
+        border-radius: 7px; }
   .navigation#navsticky {
     text-align: right; }
     .navigation#navsticky ul {
       padding-right: 3em; }
+      .navigation#navsticky ul a.activo {
+        border-bottom: solid 2px rgba(255, 255, 255, 0.7); }
+      .navigation#navsticky ul li:hover {
+        text-shadow: 0 0 2px white; }
+        .navigation#navsticky ul li:hover a {
+          border: 0; }
 
 .video-container {
   position: absolute;
@@ -437,8 +452,10 @@ input:-webkit-autofill {
     box-shadow: none !important;
     text-shadow: none !important; }
   a,
-  a:visited {
-    text-decoration: underline; }
+  a:visited,
+  a:focus {
+    -webkit-text-decoration-line: none;
+    text-decoration-line: none; }
   a[href]:after {
     content: " (" attr(href) ")"; }
   abbr[title]:after {

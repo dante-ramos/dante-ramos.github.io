@@ -35,7 +35,6 @@ function initMap() {
                 var distanciatiempotexto = horas +" horas y "+ minutos +" minutos"
                 $("#mensaje").html('Usted está a '+distanciatiempotexto+', en auto, de distrutar de una excelente comida en <p class="dancing-script text-medium-size">Restaurante Vostro</p>')
             } else {
-                alert("No se pudo calcular la distancia desde su ubicación.")
                 $("#mensaje").css("display", "none")
             }
         })
