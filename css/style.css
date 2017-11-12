@@ -125,6 +125,9 @@ textarea {
 #iconomenu {
   display: none; }
 
+#isopen {
+  word-spacing: -0.5em; }
+
 .video-container {
   position: absolute;
   top: 0;
@@ -482,7 +485,9 @@ input:-webkit-autofill {
 
 @media only screen and (max-width: 255px), screen and (max-height: 285px) {
   .container #card p {
-    display: none; } }
+    display: none; }
+  #contact {
+    margin-bottom: 3em; } }
 
 @media only screen and (max-width: 1200px) and (min-width: 990px) {
   #menu-title {
@@ -495,7 +500,9 @@ input:-webkit-autofill {
     padding-bottom: 0;
     padding-top: 0.5em; }
     #navsticky ul li:first-child {
-      padding-top: 0; } }
+      padding-top: 0; }
+  #contenidoiniciocentro img {
+    height: 35vh; } }
 
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
