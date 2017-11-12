@@ -4,7 +4,7 @@
 <html class="full-height">
   <head>
     <meta charset="utf-8">
-    <title>La mejor comida del mundo | Mi restaurante</title>
+    <title>Restaurante Vostro | Tlaltenango, Zacatecas</title>
     <meta content="La mejor comida del mundo" name="description">
     <!-- para responsive design -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -72,7 +72,7 @@
           </li>
         </ul>
       </nav>
-      <div class="col-xs-12" style="padding:0;">
+      <div class="col-xs-12" id="contenidoiniciocentro" style="padding:0;">
         <div class="box">
           <img height="20%" src="imgs/logo.png">
           <h1>Restaurante Vostro</h1>
@@ -81,29 +81,33 @@
       </div>
       <div class="center-xs absolute" id="barra-inferior">
         <div class="row middle-xs center-xs">
-          <div class="col-xs-7 col-sm-6">
+          <div class="col-xs-8 col-sm-4">
             Atención cálida y comida preparada por artesanos.
           </div>
           <div class="col-xs hidden" id="stickynav">
-            <nav class="navigation" id="navsticky">
-              <ul class="list-inline">
-                <li>
-                  <a href="#home">Inicio</a>
-                </li>
-                <li>
-                  <a href="#menu">Menú</a>
-                </li>
-                <li>
-                  <a href="#galeria">Galería</a>
-                </li>
-                <li>
-                  <a href="#contact">Contacto</a>
-                </li>
-                <li>
-                  <a href="#localizacion">Cómo llegar</a>
-                </li>
-              </ul>
-            </nav>
+            <div class="box">
+              <nav class="navigation" id="navsticky">
+                <!-- / se pondrán 2 íconos, para que cuando con js se remueva el primero, segundo se muestre -->
+                <i class="glyphicon glyphicon-menu-hamburger glyphicon-remove" id="iconomenu"></i>
+                <ul class="list-inline">
+                  <li>
+                    <a href="#home">Inicio</a>
+                  </li>
+                  <li>
+                    <a href="#menu">Menú</a>
+                  </li>
+                  <li>
+                    <a href="#galeria">Galería</a>
+                  </li>
+                  <li>
+                    <a href="#contact">Contacto</a>
+                  </li>
+                  <li>
+                    <a href="#localizacion">Cómo llegar</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -245,41 +249,39 @@
     <!-- / container se pueda traslapar con lo superior o inferior -->
     <div class="container" style="height:0;">
       <div id="card">
-        <h3>
-          <span class="dancing-script strong medium">En Restaurante Vostro,</span>
+        <h4>
+          <span class="dancing-script strong">En Restaurante Vostro,</span>
           <br>
           cocinar no es una profesión,
           <br>
           ni es cuestión de técnica,
           <br>
-          <span class="dancing-script strong medium">es un Arte.</span>
-        </h3>
+          <span class="dancing-script strong">es un Arte.</span>
+        </h4>
         <p>
-          Ubicados en la ciudad de Tlaltenango de Sánchez Román, estado de Zacatecas, y con el respaldo de más de 15 años de excelencia en calidad gastronómica y servicio, ofrecemos a nuestros comensales la experiencia gourmet en un amplio menú con carnes finas, productos del mar frescos, antojitos mexicanos y platillos internacionales preparados por personal altamente calificado, utilizando técnicas modernas y materia prima de alta calidad. venga y disfrute de un ambiente familiar y deguste nuestras especialidades en platos fuertes, ensaladas, pizzas a la leña, coctelería y postres.
+          Con el respaldo de más de 15 años de excelencia en calidad gastronómica y servicio, ofrecemos a nuestros comensales la experiencia gourmet en un amplio menú con carnes finas, productos del mar frescos, antojitos mexicanos y platillos internacionales. Venga y disfrute de un ambiente familiar y deguste nuestras especialidades en comida, respostería y coctelería.
         </p>
       </div>
     </div>
     <div class="seccion full-height" id="contact">
       <div class="row full-height middle-xs">
         <div class="col-xs-12">
-          <p class="text-center white text-medium-size" style="margin: 1.5em;">LLena los campos y presiona enter para enviar la información.</p>
+          <p class="text-center white text-medium-size" id="form-helper" style="margin: 1.5em;">LLena los campos y presiona enter para enviar la información.</p>
           <div class="box">
             <form action="https://formspree.io/dante.ro86@gmail.com" id="contact-form" method="POST">
               <div class="row center-xs">
                 <!-- / para navegar por los campos, se muestran 3 puntos, uno por campo -->
-                <div class="col-xs-2 col-md-1">
-                  <div class="box" style="float: right;">
+                <div class="col-xs-1">
+                  <div class="box">
                     <!-- /ciclo for de 3 -->
                     <!-- /path-step es la clase de las bolitas para navegar entre el formulario -->
                     <div class="path-step active"></div>
-                    <!-- /path-step es la clase de las bolitas para navegar entre el formulario -->
                     <div class="path-step"></div>
-                    <!-- /path-step es la clase de las bolitas para navegar entre el formulario -->
                     <div class="path-step"></div>
                   </div>
                 </div>
                 <!-- /inputs del formulario, todos son requeridos -->
-                <div class="col-xs-4">
+                <div class="col-xs-10 col-md-5">
                   <div class="box">
                     <fieldset class="step active">
                       <input class="input" name="email" placeholder="Escriba su correo electrónico" required type="email">

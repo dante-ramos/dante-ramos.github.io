@@ -12,7 +12,7 @@
 %html{class:"full-height"}
     %head
         %meta{charset:"utf-8"}
-        %title La mejor comida del mundo | Mi restaurante
+        %title Restaurante Vostro | Tlaltenango, Zacatecas
         %meta{name:"description", content:"La mejor comida del mundo"}
         /para responsive design
         %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
@@ -63,7 +63,7 @@
                     -menu.each do |elemento|
                         %li
                             %a{href:"#{elemento[:href]}"} #{elemento[:name]}
-            .col-xs-12{style:"padding:0;"}
+            .col-xs-12#contenidoiniciocentro{style:"padding:0;"}
                 .box
                     %img{src:"imgs/logo.png", height:"20%"}
                     -# %img{src:"imgs/logo.png", height:"20%"}
@@ -71,15 +71,17 @@
                     %p.glyphicon.glyphicon-time#isopen Abierto ahora
             #barra-inferior.center-xs.absolute
                 .row.middle-xs.center-xs
-                    .col-xs-7.col-sm-6
+                    .col-xs-8.col-sm-4
                         Atención cálida y comida preparada por artesanos.
                     .col-xs.hidden#stickynav
-                        -# .box
-                        %nav.navigation#navsticky
-                            %ul.list-inline
-                                -menu.each do |elemento|
-                                    %li
-                                        %a{href:"#{elemento[:href]}"} #{elemento[:name]}
+                        .box
+                            %nav.navigation#navsticky
+                                // se pondrán 2 íconos, para que cuando con js se remueva el primero, segundo se muestre
+                                %i.glyphicon.glyphicon-menu-hamburger.glyphicon-remove#iconomenu
+                                %ul.list-inline
+                                    -menu.each do |elemento|
+                                        %li
+                                            %a{href:"#{elemento[:href]}"} #{elemento[:name]}
         .seccion.text-center.relative#menu
             .absolute#menu-title{style:"z-index: 10; margin:0; padding:0;"}
                 %h3.dancing-script{style:"font-size: 4em;"}
@@ -112,35 +114,35 @@
         // container se pueda traslapar con lo superior o inferior
         .container{style:"height:0;"}
             #card
-                %h3
-                    %span.dancing-script.strong.medium En Restaurante Vostro,
+                %h4
+                    %span.dancing-script.strong En Restaurante Vostro,
                     %br
                     cocinar no es una profesión,
                     %br
                     ni es cuestión de técnica,
                     %br
-                    %span.dancing-script.strong.medium es un Arte.
+                    %span.dancing-script.strong es un Arte.
                 %p
-                    Ubicados en la ciudad de Tlaltenango de Sánchez Román, estado de Zacatecas, y con el respaldo de más de 15 años de excelencia en calidad gastronómica y servicio, ofrecemos a nuestros comensales la experiencia gourmet en un amplio menú con carnes finas, productos del mar frescos, antojitos mexicanos y platillos internacionales preparados por personal altamente calificado, utilizando técnicas modernas y materia prima de alta calidad. venga y disfrute de un ambiente familiar y deguste nuestras especialidades en platos fuertes, ensaladas, pizzas a la leña, coctelería y postres.
+                    Con el respaldo de más de 15 años de excelencia en calidad gastronómica y servicio, ofrecemos a nuestros comensales la experiencia gourmet en un amplio menú con carnes finas, productos del mar frescos, antojitos mexicanos y platillos internacionales. Venga y disfrute de un ambiente familiar y deguste nuestras especialidades en comida, respostería y coctelería.
         .seccion#contact.full-height
             .row.full-height.middle-xs
                 .col-xs-12
-                    %p.text-center.white.text-medium-size{style:"margin: 1.5em;"} LLena los campos y presiona enter para enviar la información.
+                    %p#form-helper.text-center.white.text-medium-size{style:"margin: 1.5em;"} LLena los campos y presiona enter para enviar la información.
                     .box
                         %form{action:"https://formspree.io/dante.ro86@gmail.com", method:"POST", id:"contact-form"}
                             .row.center-xs
                                 // para navegar por los campos, se muestran 3 puntos, uno por campo
-                                .col-xs-2.col-md-1
-                                    .box{style:"float: right;"}
+                                .col-xs-1
+                                    .box
                                         //ciclo for de 3
+                                        //path-step es la clase de las bolitas para navegar entre el formulario
                                         -3.times do |i|
-                                            //path-step es la clase de las bolitas para navegar entre el formulario
                                             -if i == 0
                                                 .path-step.active
                                             -else
                                                 .path-step
                                 //inputs del formulario, todos son requeridos
-                                .col-xs-4
+                                .col-xs-10.col-md-5
                                     .box
                                         %fieldset.step.active
                                             %input{type:"email", class:"input", name:"email", placeholder:"Escriba su correo electrónico", required:true}
@@ -155,7 +157,8 @@
         .seccion#localizacion
             #mapa
             #mensaje.text-center.fondo-negro.text-white{style:"padding: 1em;"}
-
+        -# .text-center.text-double-size.relative.text-white{style:"height: 20vh; background-color: #222; top: 25vh;"}
+        -#     Copyright y ligas a redes sociales.
         // si se hace un llamado a jquery por cdn, por seguridad se recomienda tener ésto como respaldo por si no carga:
         //%script
         //    window.jQuery || document.write("<script src='js/vendor/jquery-3.2.1.min.js'></script>")

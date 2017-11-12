@@ -25,7 +25,7 @@ function initMap() {
             destinations: [destino],
             travelMode: google.maps.TravelMode.DRIVING
         }, function(response, status){ // response es una matriz de distancias de TODOS los origenes a TODOS los destinos
-            if (status === google.maps.DistanceMatrixStatus.OK) {
+            if ((status === google.maps.DistanceMatrixStatus.OK)&& (response.rows[0].elements[0].duration.value < 3600)) {
                 const distancia = response.rows[0].elements[0] // distancia entre el primer origen y el primer destino
                 var distanciatiemposegundos = distancia.duration.value // se obtiene la distancia en tiempo de viaje
                 // para mostrar la distancia en tiempo de manera legible, se construye un texto en españo de horas y minutos

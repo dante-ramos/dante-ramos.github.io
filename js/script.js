@@ -13,10 +13,10 @@
         //verifica que el fin de la primera parte haya llegado a la parte superior por scroll
         function IsInBottom(){
             const $description = $("#barra-inferior")
-            const $descriptionheight = $description.height();
-            const $menutopdist = $("#navtop").height()
+            const $descriptionheight = $description.outerHeight();
+            const $menutopdist = $("#navtop").outerHeight()
             // $('window').scrollTop() da la istancia entre el scroll actual y el tope de la ventana
-            return $(window).scrollTop() > $(window).height() - ($descriptionheight*2.5) - ($menutopdist*2.5) // retorna cierto o falso *2 para darle espacio al menú antes de la barra
+            return $(window).scrollTop() > $(window).height() - ($descriptionheight*2) - ($menutopdist) // retorna cierto o falso *2 para darle espacio al menú antes de la barra
         }
 
         //oculta la navegación superior
@@ -24,13 +24,21 @@
             $('#barra-inferior').addClass('fixed').removeClass('absolute')
             $('#navtop').addClass('hidden')
             $('#stickynav').removeClass('hidden')
+            $("#contenidoiniciocentro").css("display", "none") // en situaciones se veía algo del texto debajo
         }
 
         //muestra la navegación superior
         function unhidetopnav(){
+            // el if es para cuando se está en responsivo, si se vuelve a donde el navtop se muestra, se quitan las clases del menú responsivo para que cuando se vuelva a bajar no se vea el menú
+            if((!$("#iconomenu").hasClass("glyphicon-menu-hamburger"))&&($("#stickynav ul").hasClass("activo"))){
+                $("#iconomenu").addClass("glyphicon-menu-hamburger")
+                $("#stickynav ul").removeClass("activo")
+            }
+            // se hacen las actividades en las barras del navegación tal cual
             $('#barra-inferior').removeClass('fixed').addClass('absolute')
             $('#navtop').removeClass('hidden')
             $('#stickynav').addClass('hidden')
+            $("#contenidoiniciocentro").css("display", "block") // en situaciones se veía algo del texto debajo
         }
     })
 
@@ -59,10 +67,14 @@
         }
       });
 
-    //   $('nav a').on('click', function(event) {
-    //       $(this).parent().find('a').removeClass('active_underlined');
-    //       $(this).addClass('active_underlined');
-    //   });
+    $("#iconomenu").click(function(){
+        $("#stickynav ul").toggleClass("activo")
+        $(this).toggleClass("glyphicon-menu-hamburger")
+        $("#stickynav ul.activo li a").on("click", function(){
+            $("#stickynav ul.activo").removeClass("activo")
+            $("#iconomenu").addClass("glyphicon-menu-hamburger")
+        })
+    });
 
       $(window).on('scroll', function() {
           $('.seccion').each(function() {
@@ -73,4 +85,5 @@
                 }
           });
       });
+
 })()

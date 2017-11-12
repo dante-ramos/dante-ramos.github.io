@@ -141,19 +141,19 @@ textarea {
     }
     &#navsticky {
         text-align: right;
+        font-size: 1.5em;
         ul{
-            padding-right: 3em;
             a.activo {
                 border-bottom: solid 2px rgba(255,255,255, 0.7);
             }
-            li:hover {
+            li:hover a{
                 text-shadow: 0 0 2px white;
-                a {
-                    border: 0;
-                }
             }
         }
     }
+}
+#iconomenu { // es el ícono del menú cuando es responsivo, por eso está oculto
+    display: none;
 }
 
 .video-container {
@@ -214,7 +214,7 @@ textarea {
     width: 100%;
     color: white;
     background-color: #222;
-    font-size: 1.5em;
+    // font-size: 1.5em;
     padding: 20px 0;
     &.fixed {
         top: 0;
@@ -244,6 +244,9 @@ textarea {
         width: 100%;
         transition: 0.5s;
     }
+}
+#menu .row {
+    background-color: #222;
 }
 #menu-title {
     z-index: 100;
@@ -508,8 +511,84 @@ input:-webkit-autofill { // modifica el estilo que pone el autocomplete de googl
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 900px) {
+    #navtop.navigation {
+        right: auto; // normal está pegado a la derecha, pero con ésto se centra
+        z-index: 10;
+        ul li {
+            padding: 0.5em;
+        }
+    }
+    #iconomenu {
+        padding-right: 1em;
+        display: block;
+    }
+    #navsticky {
+        ul {
+            position: absolute;
+            width: 100vw;
+            top: 55px;
+            background-color: #222;
+            right: 0;
+            display: block;
+            text-align: center;
+            font-size: 1.5em;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.7s;
+            li {
+                width: 100vw;
+                padding: 1em 0;
+                &:first-child{
+                    padding-top: 2em;
+                }
+            }
+            &.activo {
+                max-height: 100vh;
+            }
+        }
+    }
+    .navigation#navsticky ul a.activo { // lo debí de hacer así de específico para que sobreescribiera el de arriba
+        border: none;
+    }
+    #localizacion {
+        width: 100vw;
+    }
+}
+@media only screen and (max-width:510px){
+    input, textarea {
+        font-size: 1em;
+        font-stretch: condensed;
+    }
+    .path-step {
+        height: 8px;
+        width: 8px;
+        &:last-child{
+            margin-bottom: 4em;
+        }
+    }
+    #form-helper{
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 255px){
+    body {
+        max-width: 300px;
+        overflow-x: scroll;
+    }
+    .container #card p {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 430px){
+    #navsticky ul li {
+        padding-bottom: 0;
+        &:first-child{
+            padding-top: 1em;
+        }
+    }
 }
 
 @media print,

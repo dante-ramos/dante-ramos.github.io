@@ -114,15 +114,15 @@ textarea {
         background-color: rgba(240, 22, 0, 0.4);
         border-radius: 7px; }
   .navigation#navsticky {
-    text-align: right; }
-    .navigation#navsticky ul {
-      padding-right: 3em; }
-      .navigation#navsticky ul a.activo {
-        border-bottom: solid 2px rgba(255, 255, 255, 0.7); }
-      .navigation#navsticky ul li:hover {
-        text-shadow: 0 0 2px white; }
-        .navigation#navsticky ul li:hover a {
-          border: 0; }
+    text-align: right;
+    font-size: 1.5em; }
+    .navigation#navsticky ul a.activo {
+      border-bottom: solid 2px rgba(255, 255, 255, 0.7); }
+    .navigation#navsticky ul li:hover a {
+      text-shadow: 0 0 2px white; }
+
+#iconomenu {
+  display: none; }
 
 .video-container {
   position: absolute;
@@ -172,7 +172,6 @@ textarea {
   width: 100%;
   color: white;
   background-color: #222;
-  font-size: 1.5em;
   padding: 20px 0; }
   #barra-inferior.fixed {
     top: 0; }
@@ -197,6 +196,9 @@ textarea {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
+
+#menu .row {
+  background-color: #222; }
 
 #menu-title {
   z-index: 100;
@@ -429,8 +431,65 @@ input:-webkit-autofill {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
+@media only screen and (max-width: 900px) {
+  #navtop.navigation {
+    right: auto;
+    z-index: 10; }
+    #navtop.navigation ul li {
+      padding: 0.5em; }
+  #iconomenu {
+    padding-right: 1em;
+    display: block; }
+  #navsticky ul {
+    position: absolute;
+    width: 100vw;
+    top: 55px;
+    background-color: #222;
+    right: 0;
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    transition: all 0.7s; }
+    #navsticky ul li {
+      width: 100vw;
+      padding: 1em 0; }
+      #navsticky ul li:first-child {
+        padding-top: 2em; }
+    #navsticky ul.activo {
+      max-height: 100vh; }
+  .navigation#navsticky ul a.activo {
+    border: none; }
+  #localizacion {
+    width: 100vw; } }
+
+@media only screen and (max-width: 510px) {
+  input, textarea {
+    font-size: 1em;
+    font-stretch: condensed; }
+  .path-step {
+    height: 8px;
+    width: 8px; }
+    .path-step:last-child {
+      margin-bottom: 4em; }
+  #form-helper {
+    font-size: 1em; } }
+
+@media only screen and (max-width: 255px) {
+  body {
+    max-width: 300px;
+    overflow-x: scroll; }
+  .container #card p {
+    display: none; } }
+
+@media only screen and (max-height: 430px) {
+  #navsticky ul li {
+    padding-bottom: 0; }
+    #navsticky ul li:first-child {
+      padding-top: 1em; } }
 
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
