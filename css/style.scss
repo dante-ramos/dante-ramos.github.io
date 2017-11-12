@@ -18,6 +18,7 @@ html {
 
 html, body {
     height: 100%;
+    background-color: #222;
 }
 
 /*
@@ -239,13 +240,13 @@ textarea {
     .black-screen {
         top: -100%; //para el efecto de la animación, los subimos 100%
         position:relative; // para que el black-screen esté sobre la imagen y se le pueda poner los 100% de height y width
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(0, 0, 0, 0.6);
         height: 100%;
         width: 100%;
         transition: 0.5s;
     }
 }
-#menu .row {
+#menu > .row {
     background-color: #222;
 }
 #menu-title {
@@ -261,6 +262,7 @@ textarea {
     overflow-x: hidden;
     white-space: nowrap;
     .inner {
+        margin: 5px 0;
         left: 0;
         transition: left 1.5s;
         position: relative;
@@ -555,7 +557,7 @@ input:-webkit-autofill { // modifica el estilo que pone el autocomplete de googl
         width: 100vw;
     }
 }
-@media only screen and (max-width:510px){
+@media only screen and (max-width:510px), screen and (max-height: 430px){
     input, textarea {
         font-size: 1em;
         font-stretch: condensed;
@@ -572,21 +574,31 @@ input:-webkit-autofill { // modifica el estilo que pone el autocomplete de googl
     }
 }
 
-@media only screen and (max-width: 255px){
-    body {
-        max-width: 300px;
-        overflow-x: scroll;
-    }
+@media only screen and (max-width: 255px), screen and (max-height: 285px){
+    // body {
+    //     max-width: 300px;
+    //     overflow-x: scroll;
+    // }
     .container #card p {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 990px){
+    #menu-title{
+        top: 0;
+        h3 {
+            margin: 0 1em;
+        }
     }
 }
 
 @media only screen and (max-height: 430px){
     #navsticky ul li {
         padding-bottom: 0;
+        padding-top: 0.5em;
         &:first-child{
-            padding-top: 1em;
+            padding-top: 0;
         }
     }
 }
