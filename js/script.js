@@ -1,10 +1,7 @@
 ;(function(){
     // mostrar si está abierto o cerrado
     var hora = new Date().getHours()
-    console.log(hora);
     var abierto =(19 < hora && hora < 22)?" Abierto ahora":" Ahora está cerrado"
-    console.log(abierto);
-    console.log(19 < hora < 22);
     abierto += "\n horario es de martes a domingo de 7pm a 11pm"
     $("#isopen").html(abierto)
 

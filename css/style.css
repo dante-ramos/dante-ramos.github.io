@@ -502,7 +502,7 @@ input:-webkit-autofill {
     #navsticky ul li:first-child {
       padding-top: 0; }
   #contenidoiniciocentro img {
-    height: 35vh; } }
+    height: 30vh; } }
 
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
