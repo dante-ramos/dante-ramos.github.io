@@ -25,6 +25,8 @@
       - Flexbox grid
       - Sass
       - Normalize
+    - Para el envío de correos de contacto
+      - Formspree.io
     - Recursos
       - Imágenes y videos compartidos por el instructor
 ## Replicar y poner en ejecución
@@ -32,7 +34,8 @@
   - python -m SimpleHTTPServer puertoquesedeseequesirvalapágina
   - python3 -m http.server puertoquesedeseequesirvalapágina
   - php -S 127.0.0.1:puertoquesedeseequesirvalapagina
-  (considere el puerto 8080 para que la API de google maps funcione)
+  *(considere el puerto 8080 para que la API de google maps funcione)*
   
 Si desea replicar la página para un proyecto suyo, debe considerar la creación de una API key de google maps, la que tiene actualmente el sistema tiene habilitado el acceso desde 127.0.0.1:8080 y dante-ramos.github.io, no use la llave actual en producción por favor.
   Para realizar modificaciones usando haml y sass, le recomiendo usar prepros, de lo contrario elimine los archivos correspondientes a haml, sass y prepros que ya contiene el proyecto.
+**El formulario envía los correos a mi correo personal, vea la página de formspree para que utilice el suyo.**
