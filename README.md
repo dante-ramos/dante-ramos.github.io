@@ -2,7 +2,7 @@
 ## Descripción
   Proyecto didáctico que hice siguiendo un videotutorial de desarrollo frontend. No fue realizado para un cliente real.
   Las técnicas y herramientas que se usaron para construirlo fueron mayormente las que el instructor usó para el curso, así que es posible que el código no sea óptimo.
-  [Versión live](dante-ramos.github.io)
+  [Versión live](https://dante-ramos.github.io/)
   ### Características:
     - Diseño onepage donde los links envían a otros elementos de la misma página
     - Responsivo a varias dimensiones, las dimenciones mínimas con las que se probó fue con un iphone 5 orientado vertical y horizontal.
@@ -33,5 +33,6 @@
   - python3 -m http.server puertoquesedeseequesirvalapágina
   - php -S 127.0.0.1:puertoquesedeseequesirvalapagina
   (considere el puerto 8080 para que la API de google maps funcione)
-  Si desea replicar la página para un proyecto suyo, debe considerar la creación de una API key de google maps, la que tiene actualmente el sistema tiene habilitado el acceso desde 127.0.0.1:8080 y dante-ramos.github.io, no use la llave actual en producción por favor.
+  
+Si desea replicar la página para un proyecto suyo, debe considerar la creación de una API key de google maps, la que tiene actualmente el sistema tiene habilitado el acceso desde 127.0.0.1:8080 y dante-ramos.github.io, no use la llave actual en producción por favor.
   Para realizar modificaciones usando haml y sass, le recomiendo usar prepros, de lo contrario elimine los archivos correspondientes a haml, sass y prepros que ya contiene el proyecto.
